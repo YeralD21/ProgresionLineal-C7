@@ -223,10 +223,11 @@ def generar_grafico(coeficientes, restricciones, resultado):
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
-    if path != "" and os.path.exists("frontend/build/" + path):
-        return send_from_directory('frontend/build', path)
+    root_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'frontend', 'build')
+    if path != "" and os.path.exists(os.path.join(root_dir, path)):
+        return send_from_directory(root_dir, path)
     else:
-        return send_from_directory('frontend/build', 'index.html')
+        return send_from_directory(root_dir, 'index.html')
 
 if __name__ == '__main__':
     app.run(debug=True) 
