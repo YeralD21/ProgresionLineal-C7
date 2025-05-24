@@ -1,4 +1,4 @@
-# Solucionador de Programación Lineal - Examen Unidad 2 - Análisis Multivariado
+# Solucionador de Programación Lineal
 
 Esta aplicación permite resolver problemas de programación lineal de manera gráfica y numérica. Permite ingresar coeficientes, restricciones y visualizar la solución mediante un gráfico.
 
@@ -60,4 +60,4 @@ npm start
 - Visualización gráfica de la solución
 - Interfaz intuitiva y fácil de usar
 - Soporte para múltiples restricciones
-- Opciones de maximización y minimización
+- Opciones de maximización y minimización 

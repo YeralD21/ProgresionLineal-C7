@@ -22,4 +22,10 @@ Thumbs.db
 # Distribution / packaging
 dist/
 build/
-*.egg-info/ 
+*.egg-info/
+
+# Object file
+*.o
+
+# Ada Library Information
+*.ali
