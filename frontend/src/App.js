@@ -180,6 +180,38 @@ function App() {
                   alt="Gráfico de la solución"
                   style={{ width: '100%', marginTop: '1rem' }}
                 />
+
+                {/* Referencias */}
+                <Box mt={2}>
+                  <Typography variant="subtitle1">Referencias:</Typography>
+                  <Typography>Variables: {resultado.referencias?.variables?.join(', ')}</Typography>
+                  <Typography>Restricciones: {resultado.referencias?.restricciones?.join(', ')}</Typography>
+                </Box>
+
+                {/* Tabla de resultados */}
+                <Box mt={2}>
+                  <Typography variant="subtitle1">Tabla de Puntos:</Typography>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '1rem' }}>
+                    <thead>
+                      <tr>
+                        <th style={{ border: '1px solid #ccc', padding: '4px' }}>Punto</th>
+                        <th style={{ border: '1px solid #ccc', padding: '4px' }}>X</th>
+                        <th style={{ border: '1px solid #ccc', padding: '4px' }}>Y</th>
+                        <th style={{ border: '1px solid #ccc', padding: '4px' }}>Valor Objetivo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {resultado.tabla_resultados?.map((p, idx) => (
+                        <tr key={idx} style={p.punto.includes('OPTIMO') ? { background: '#e0ffe0' } : {}}>
+                          <td style={{ border: '1px solid #ccc', padding: '4px' }}>{p.punto}</td>
+                          <td style={{ border: '1px solid #ccc', padding: '4px' }}>{p.x}</td>
+                          <td style={{ border: '1px solid #ccc', padding: '4px' }}>{p.y}</td>
+                          <td style={{ border: '1px solid #ccc', padding: '4px' }}>{p.valor_objetivo}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </Box>
               </Box>
             </Grid>
           )}
